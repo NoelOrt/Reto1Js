@@ -51,12 +51,16 @@ pulso.addEventListener('click', _ => {location.reload();})
 
 
 let par;
+let prim;
 let series=[];
 if(calc.num1==calc.num2){
     par=`.<br> El `+calc.num1+` `+num1Par+`.`;
+    prim=`.<br> El numero introducido `+num1Prim;
     series=[calc.num1];
 }else{
     par=`.<br> El ` +calc.num1+` ` +num1Par+` y `+calc.num2+` `+num2Par+`.`;
+    prim=`.<br> El primer numero introducido (`+calc.num1+`) `+
+    num1Prim+`, el segundo (`+calc.num2+`) `+num2Prim;
 }
 if(calc.num1<calc.num2){
     for (let i = calc.num1; i < calc.num2; i++) {
@@ -74,5 +78,4 @@ if(calc.num1>calc.num2){
 }
 
 const out = document.getElementById("calculos");
-out.innerHTML = 'La suma de los dos valores es '+suma+'.<br> El primer numero introducido ('+calc.num1+') '+
-num1Prim+', el segundo ('+calc.num2+') '+num2Prim+par+' <br> Series= '+series+'.';
+out.innerHTML = 'La suma de los dos valores es '+suma+prim+par+' <br> Series= '+series+'.';
